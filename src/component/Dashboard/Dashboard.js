@@ -47,12 +47,14 @@ export default class Dashboard extends Component
         {
             return (
                     <House key={house.id}
-                        //id={house.id} 
+                        //img={house.img} 
                         name={house.name}
                         address={house.address}
                         city={house.city}
                         state={house.state}
                         zipcode={house.zipcode}
+                        // mortgage={house.mortgage}
+                        // rent={house.rent}
                         delete={() => this.deleteHouse(house.id)} 
                     />                   
             )
@@ -60,7 +62,7 @@ export default class Dashboard extends Component
 
         return (
             <div>
-                <Link className='links' to='/wizard' list={this.state.houses}>
+                <Link className='links' to='/wizard/stepone' list={this.state.houses}>
                     Add New Property</Link>
                 <h3>Home Listings</h3>
                 {housesToDisplay}
